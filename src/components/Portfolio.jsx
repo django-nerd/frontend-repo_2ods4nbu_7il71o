@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
+import Section from './Section'
 
 export default function Portfolio() {
   const [items, setItems] = useState([])
@@ -19,7 +20,7 @@ export default function Portfolio() {
   }, [])
 
   return (
-    <section className="bg-slate-950 py-16 sm:py-24">
+    <Section className="bg-black py-16 sm:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-end justify-between mb-10">
           <h2 className="text-2xl sm:text-3xl font-bold text-white">Portfolio</h2>
@@ -33,7 +34,7 @@ export default function Portfolio() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.05 }}
-              className="group overflow-hidden rounded-xl border border-white/10 bg-slate-900/40"
+              className="group overflow-hidden fx-card"
             >
               <div className="aspect-[4/3] overflow-hidden">
                 <img src={it.image_url} alt={it.title} className="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
@@ -46,6 +47,6 @@ export default function Portfolio() {
           ))}
         </div>
       </div>
-    </section>
+    </Section>
   )
 }

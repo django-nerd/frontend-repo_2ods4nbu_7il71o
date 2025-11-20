@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion'
+import Section from './Section'
 
 const brands = ['Shoprite', 'MTC', 'FNB', 'NamibMills', 'Nedbank', 'Pick n Pay']
 
 export default function LogoStrip() {
   return (
-    <section className="bg-slate-950 py-10">
+    <Section className="bg-black py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 items-center opacity-80">
           {brands.map((b, idx) => (
@@ -21,6 +22,6 @@ export default function LogoStrip() {
           ))}
         </div>
       </div>
-    </section>
+    </Section>
   )
 }

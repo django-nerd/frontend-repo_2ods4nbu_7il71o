@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
+import Section from './Section'
 
 export default function Testimonials() {
   const [items, setItems] = useState([])
@@ -19,7 +20,7 @@ export default function Testimonials() {
   }, [])
 
   return (
-    <section className="bg-slate-950 py-16 sm:py-24">
+    <Section className="bg-black py-16 sm:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-end justify-between mb-10">
           <h2 className="text-2xl sm:text-3xl font-bold text-white">What clients say</h2>
@@ -33,7 +34,7 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.06 }}
-              className="rounded-xl border border-white/10 bg-slate-900/40 p-6"
+              className="fx-card p-6"
             >
               <p className="text-slate-300">“{t.quote}”</p>
               <footer className="mt-4 text-sm text-slate-400">{t.name}{t.role ? `, ${t.role}` : ''}{t.company ? ` — ${t.company}` : ''}</footer>
@@ -41,6 +42,6 @@ export default function Testimonials() {
           ))}
         </div>
       </div>
-    </section>
+    </Section>
   )
 }

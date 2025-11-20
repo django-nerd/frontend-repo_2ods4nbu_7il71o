@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { Brush, Shirt, PictureInPicture2, BadgePercent, Ruler, Gift, SquareKanban } from 'lucide-react'
+import Section from './Section'
 
 const services = [
   { icon: Shirt, title: 'DTF Printing', desc: 'Vibrant, durable prints for apparel and merch.' },
@@ -12,7 +13,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="relative py-16 sm:py-24 bg-slate-950">
+    <Section className="relative py-16 sm:py-24 bg-black">
       <div className="absolute inset-0 bg-[radial-gradient(600px_circle_at_20%_20%,rgba(236,72,153,0.08),transparent),radial-gradient(600px_circle_at_80%_0%,rgba(34,211,238,0.08),transparent)]" />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-end justify-between mb-10">
@@ -23,11 +24,11 @@ export default function Services() {
           {services.map(({ icon: Icon, title, desc }, idx) => (
             <motion.div
               key={title}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 16, scale: 0.98 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.05 }}
-              className="group rounded-xl border border-white/10 bg-slate-900/40 p-6 hover:border-fuchsia-400/40 hover:shadow-[0_0_40px_rgba(236,72,153,0.15)] transition"
+              transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: idx * 0.05 }}
+              className="group fx-card p-6 fx-hover hover:border-fuchsia-400/40"
             >
               <div className="w-10 h-10 rounded-lg bg-gradient-to-tr from-fuchsia-500 to-cyan-400 flex items-center justify-center text-white mb-4">
                 <Icon size={20} />
@@ -38,6 +39,6 @@ export default function Services() {
           ))}
         </div>
       </div>
-    </section>
+    </Section>
   )
 }

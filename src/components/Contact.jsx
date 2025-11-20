@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Section from './Section'
 
 export default function Contact() {
   const [status, setStatus] = useState(null)
@@ -23,7 +24,7 @@ export default function Contact() {
   }
 
   return (
-    <section className="bg-slate-950 py-16 sm:py-24">
+    <Section className="bg-black py-16 sm:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-10">
           <div>
@@ -36,18 +37,18 @@ export default function Contact() {
             </div>
           </div>
 
-          <form onSubmit={handleSubmit} className="rounded-xl border border-white/10 bg-slate-900/40 p-6 space-y-4">
+          <form onSubmit={handleSubmit} className="fx-card p-6 space-y-4">
             <div className="grid sm:grid-cols-2 gap-4">
-              <input name="name" required placeholder="Your name" className="w-full rounded-md bg-slate-900/60 border border-white/10 px-3 py-2 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-fuchsia-500" />
-              <input name="email" required type="email" placeholder="Email" className="w-full rounded-md bg-slate-900/60 border border-white/10 px-3 py-2 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-fuchsia-500" />
+              <input name="name" required placeholder="Your name" className="w-full rounded-md bg-black/60 border border-white/10 px-3 py-2 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-fuchsia-500" />
+              <input name="email" required type="email" placeholder="Email" className="w-full rounded-md bg-black/60 border border-white/10 px-3 py-2 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-fuchsia-500" />
             </div>
             <div className="grid sm:grid-cols-2 gap-4">
-              <input name="phone" placeholder="Phone" className="w-full rounded-md bg-slate-900/60 border border-white/10 px-3 py-2 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-fuchsia-500" />
-              <input name="company" placeholder="Company (optional)" className="w-full rounded-md bg-slate-900/60 border border-white/10 px-3 py-2 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-fuchsia-500" />
+              <input name="phone" placeholder="Phone" className="w-full rounded-md bg-black/60 border border-white/10 px-3 py-2 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-fuchsia-500" />
+              <input name="company" placeholder="Company (optional)" className="w-full rounded-md bg-black/60 border border-white/10 px-3 py-2 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-fuchsia-500" />
             </div>
-            <input name="subject" placeholder="Subject" className="w-full rounded-md bg-slate-900/60 border border-white/10 px-3 py-2 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-fuchsia-500" />
-            <textarea name="message" required rows="5" placeholder="Tell us about your project" className="w-full rounded-md bg-slate-900/60 border border-white/10 px-3 py-2 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-fuchsia-500" />
-            <button className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-fuchsia-500 to-cyan-400 px-5 py-3 text-white font-semibold shadow-[0_0_30px_rgba(34,211,238,0.35)] hover:opacity-95 transition">Send message</button>
+            <input name="subject" placeholder="Subject" className="w-full rounded-md bg-black/60 border border-white/10 px-3 py-2 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-fuchsia-500" />
+            <textarea name="message" required rows="5" placeholder="Tell us about your project" className="w-full rounded-md bg-black/60 border border-white/10 px-3 py-2 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-fuchsia-500" />
+            <button className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-fuchsia-500 to-cyan-400 px-5 py-3 text-white font-semibold glow fx-hover">Send message</button>
             {status && (
               <p className={`text-sm ${status.ok ? 'text-emerald-400' : 'text-rose-400'}`}>
                 {status.ok ? 'Thanks! We’ll be in touch.' : status.error}
@@ -56,6 +57,6 @@ export default function Contact() {
           </form>
         </div>
       </div>
-    </section>
+    </Section>
   )
 }
