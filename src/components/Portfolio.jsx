@@ -20,7 +20,7 @@ export default function Portfolio() {
   }, [])
 
   return (
-    <Section className="bg-black py-16 sm:py-24">
+    <Section className="bg-black py-16 sm:py-24" intensity={1.1} y={52}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-end justify-between mb-10">
           <h2 className="text-2xl sm:text-3xl font-bold text-white">Portfolio</h2>
@@ -30,11 +30,12 @@ export default function Portfolio() {
           {items.map((it, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 18, filter: 'blur(2px)' }}
+              whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.05 }}
+              transition={{ duration: 0.55, delay: idx * 0.05 }}
               className="group overflow-hidden fx-card"
+              whileHover={{ y: -6 }}
             >
               <div className="aspect-[4/3] overflow-hidden">
                 <img src={it.image_url} alt={it.title} className="w-full h-full object-cover group-hover:scale-105 transition duration-500" />

@@ -20,7 +20,7 @@ export default function Testimonials() {
   }, [])
 
   return (
-    <Section className="bg-black py-16 sm:py-24">
+    <Section className="bg-black py-16 sm:py-24" intensity={1.1} y={48}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-end justify-between mb-10">
           <h2 className="text-2xl sm:text-3xl font-bold text-white">What clients say</h2>
@@ -30,11 +30,12 @@ export default function Testimonials() {
           {items.map((t, i) => (
             <motion.blockquote
               key={i}
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 16, filter: 'blur(2px)' }}
+              whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.06 }}
+              transition={{ duration: 0.6, delay: i * 0.06 }}
               className="fx-card p-6"
+              whileHover={{ y: -6 }}
             >
               <p className="text-slate-300">“{t.quote}”</p>
               <footer className="mt-4 text-sm text-slate-400">{t.name}{t.role ? `, ${t.role}` : ''}{t.company ? ` — ${t.company}` : ''}</footer>
